@@ -1,29 +1,19 @@
 import Link from "next/link";
-import AIlearn from '../pages/learn/ailearn'
-const Course = ({ name, link }) => {
+
+const Course = ({name, link}) => {
   return (
+      
     <div className="col-sm-3">
       <div className="place-list">
         <div className="place-body">
-          <img
-            src={`${process.env.PROXY_TARGET_URL}/${link}`}
-            width="300"
-            height="165"
-            className="place-img"
-          />
-          <a href="#" className="text">
-            {name}
-          </a>
+          <img src={`${process.env.PROXY_TARGET_URL}/${link}`} width="300" height="165" className="place-img"/>
+          <a href="dangnhap.html" className="text">{name} </a>
           <br />
-          <Link href="/learn/ailearn"><a
-            className="read-more text-white"
-          >
-            ReadMore >>
-          </a></Link>
-          
+          <a onClick={() => ReadMore()} href="dangnhap.html" className="read-more text-white"> Xem Thêm </a>
         </div>
       </div>
     </div>
   );
 };
+
 export default Course;
